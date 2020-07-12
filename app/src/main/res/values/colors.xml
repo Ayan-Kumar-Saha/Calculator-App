@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#040709</color>
+    <color name="secondaryColorOne">#fdae2a</color>
+    <color name="secondaryColorTwo">#212b34</color>
+    <color name="alternateColorOne">#fff</color>
+    <color name="alternateColorTwo">#bcc5cd</color>
+    <color name="rippleColor">#bfbfc1</color>
+</resources>

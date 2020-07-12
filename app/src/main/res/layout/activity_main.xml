@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/previous"
+        style="@style/TextViewStyle"
+        android:layout_weight="2"
+        android:gravity="end|bottom"
+        android:textSize="25sp"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/alternateColorTwo"/>
+
+    <TextView
+        android:id="@+id/current"
+        style="@style/TextViewStyle"
+        android:layout_weight="1"
+        android:gravity="center|end"
+        android:maxLength="15"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="45sp"
+        android:textColor="@color/alternateColorOne"/>
+
+
+    <LinearLayout style="@style/LinearLayoutStyle">
+
+        <Button
+            android:id="@+id/operator_all_clear"
+            style="@style/ActionButtonStyle"
+            android:text="AC"
+            android:onClick="clearAll"/>
+
+        <ImageButton
+            android:id="@+id/operator_clear"
+            style="@style/ActionButtonStyle"
+            android:src="@drawable/ic_baseline_backspace_24"
+            android:onClick="clear"/>
+
+        <Button
+            android:id="@+id/operator_modulus"
+            style="@style/ActionButtonStyle"
+            android:text="%"
+            android:onClick="percent"/>
+
+        <Button
+            android:id="@+id/operator_divide"
+            style="@style/ActionButtonStyle"
+            android:text="/"
+            android:onClick="addOperator"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutStyle">
+
+        <Button
+            android:id="@+id/number_seven"
+            style="@style/NumberButtonStyle"
+            android:text="7"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/number_eight"
+            style="@style/NumberButtonStyle"
+            android:text="8"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/number_nine"
+            style="@style/NumberButtonStyle"
+            android:text="9"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/operator_multiply"
+            style="@style/ActionButtonStyle"
+            android:text="*"
+            android:onClick="addOperator"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutStyle">
+
+        <Button
+            android:id="@+id/number_four"
+            style="@style/NumberButtonStyle"
+            android:text="4"
+            android:onClick="addOperand" />
+
+        <Button
+            android:id="@+id/number_five"
+            style="@style/NumberButtonStyle"
+            android:text="5"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/number_six"
+            style="@style/NumberButtonStyle"
+            android:text="6"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/operator_subtract"
+            style="@style/ActionButtonStyle"
+            android:text="-"
+            android:onClick="addOperator"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutStyle">
+
+        <Button
+            android:id="@+id/number_one"
+            style="@style/NumberButtonStyle"
+            android:text="1"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/number_two"
+            android:text="2"
+            style="@style/NumberButtonStyle"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/number_three"
+            style="@style/NumberButtonStyle"
+            android:text="3"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/operator_add"
+            style="@style/ActionButtonStyle"
+            android:text="+"
+            android:onClick="addOperator"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LinearLayoutStyle">
+
+        <Button
+            android:id="@+id/number_double_zero"
+            style="@style/NumberButtonStyle"
+            android:text="00"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/number_zero"
+            style="@style/NumberButtonStyle"
+            android:text="0"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:onClick="addOperand"/>
+
+        <Button
+            android:id="@+id/decimal_point"
+            style="@style/NumberButtonStyle"
+            android:text="."
+            android:onClick="addPoint"/>
+
+        <Button
+            android:id="@+id/equals_to"
+            style="@style/ActionButtonStyle"
+            android:text="="
+            android:gravity="center"
+            android:onClick="equals"/>
+
+    </LinearLayout>
+
+</LinearLayout>
