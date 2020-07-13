@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.security.Key;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,9 +32,34 @@ public class MainActivity extends AppCompatActivity {
         currentView = findViewById(R.id.current);
         previousView = findViewById(R.id.previous);
 
-        hasPoint = false;
-        hasPreviousResult = false;
+        if (savedInstanceState != null) {
+
+            currentView.setText(savedInstanceState.getString(KeyStore.KEY_CURRENT_VIEW));
+            previousView.setText(savedInstanceState.getString(KeyStore.KEY_PREVIOUS_VIEW));
+            hasPoint = savedInstanceState.getBoolean(KeyStore.KEY_POINT);
+            hasPreviousResult = savedInstanceState.getBoolean(KeyStore.KEY_PREVIOUS_RESULT);
+
+        } else {
+            hasPoint = false;
+            hasPreviousResult = false;
+        }
     }
+
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
+
+        super.onSaveInstanceState(savedInstanceState);
+
+        String currentViewContent = currentView.getText().toString();
+        String previousViewContent = previousView.getText().toString();
+
+        savedInstanceState.putString(KeyStore.KEY_CURRENT_VIEW, currentViewContent);
+        savedInstanceState.putString(KeyStore.KEY_PREVIOUS_VIEW, previousViewContent);
+        savedInstanceState.putBoolean(KeyStore.KEY_POINT, hasPoint);
+        savedInstanceState.putBoolean(KeyStore.KEY_PREVIOUS_RESULT, hasPreviousResult);
+    }
+
 
     @SuppressLint("SetTextI18n")
     public void addOperand(View view) {
@@ -42,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         currentView.setText(currentView.getText() + text);
     }
+
 
     @SuppressLint("SetTextI18n")
     public void addPoint(View view) {
